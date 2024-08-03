@@ -1,0 +1,4 @@
+clients\swaperClient.class
+config\Constants.class
+testRunner\TestRunner.class
+stepDefinitions\SwaperSteps.class
