@@ -2,13 +2,11 @@ package clients;
 
 import config.Constants;
 import io.restassured.response.Response;
-import org.junit.Test;
-import stepDefinitions.SwaperSteps;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class swaperClient {
+public class SwaperClient {
 
 
 

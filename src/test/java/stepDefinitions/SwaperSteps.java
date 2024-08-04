@@ -5,8 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 
-import static clients.swaperClient.checkUserBalance;
-import static clients.swaperClient.loginToPage;
+import static clients.SwaperClient.checkUserBalance;
+import static clients.SwaperClient.loginToPage;
 
 public class SwaperSteps {
 
