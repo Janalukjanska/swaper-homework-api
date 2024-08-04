@@ -14,7 +14,6 @@ public class swaperClient {
 
     public static Response loginToPage() {
 
-
         String requestBody = String.format("{ \"name\": \"%s\", \"password\": \"%s\" }", Constants.name, Constants.pass);
 
         return
@@ -22,7 +21,7 @@ public class swaperClient {
                         .header("Content-Type", "application/json")
                         .body(requestBody)
                         .when()
-                        .post(Constants.baseURL + "/rest/public/login")
+                        .post(Constants.baseURL + "/login")
                         .then()
                         .statusCode(200)
                         .extract()
@@ -31,9 +30,9 @@ public class swaperClient {
             }
 
 
-    public static Response checkUserBalance() {
+    public static Response checkUserBalance(float expectedBalance, String dateFrom, String dateTo) {
 
-        String requestBodyForAccount = String.format("{ \"bookingDateFrom\": \"%s\", \"bookingDateTo\": \"%s\" }", Constants.DateFrom, Constants.DateTo);
+        String requestBodyForAccount = String.format("{ \"bookingDateFrom\": \"%s\", \"bookingDateTo\": \"%s\" }", dateFrom, dateTo);
 
 
         return
@@ -43,10 +42,10 @@ public class swaperClient {
                         .header("x-xsrf-token", Constants.TOKEN )
                         .body(requestBodyForAccount)
                         .when()
-                        .post(Constants.baseURL + "/rest/public/profile/account-entries")
+                        .post(Constants.baseURL + "/profile/account-entries")
                         .then()
                         .statusCode(200)
-                        .assertThat().body("openingBalance", equalTo(0.0F) )
+                        .assertThat().body("openingBalance", equalTo(expectedBalance))
                         .extract()
                         .response();
 

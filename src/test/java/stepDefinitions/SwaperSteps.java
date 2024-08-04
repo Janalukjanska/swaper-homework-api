@@ -12,7 +12,6 @@ public class SwaperSteps {
 
 
 
-
     @Given("I authorize to profile")
     public void login() {
 
@@ -24,10 +23,10 @@ public class SwaperSteps {
 
     }
 
-    @Then("I check that users balance is zero")
-    public void checkBalance() {
+    @Then("I check that users balance is {float} from {string} to {string}")
+    public void checkBalance(float expectedBalance, String dateFrom, String dateTo) {
 
-        checkUserBalance();
+        Response response = checkUserBalance(expectedBalance, dateFrom, dateTo);
 
     }
 
