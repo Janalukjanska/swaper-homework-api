@@ -10,7 +10,7 @@ This project is a sample application demonstrating the use of Rest Assured for A
 
 - **`src/test/java/clients/SwaperClient.java`**: Contains methods for interacting with the API.
 - **`src/test/java/stepDefinitions/SwaperSteps.java`**: Contains Cucumber step definitions that interact with the API.
-- **`src/test/java/config/Constants.java`**: Manages Store neccessary values for testing.
+- **`src/test/java/config/Constants.java`**: Store neccessary values for testing.
 - 
 ## Prerequisites
 
